@@ -30,6 +30,8 @@ class Brand(SQLModel, table=True):
     name: str = Field(index=True, unique=True)
     primary_owner: Optional[str] = None
     quality_status: DataQualityStatus = Field(default=DataQualityStatus.COMPLETE)
+    is_complete: bool = Field(default=False)  # Marks if ownership chain is complete
+    dispute_notes: Optional[str] = None  # Notes about ownership disputes
     last_updated: datetime = Field(default_factory=datetime.utcnow)
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
@@ -38,6 +40,7 @@ class Brand(SQLModel, table=True):
     historical_versions: List["BrandHistoricalVersion"] = Relationship(
         back_populates="brand"
     )
+    admin_logs: List["AdminLog"] = Relationship(back_populates="brand")
 
 
 class OwnershipEntry(SQLModel, table=True):
@@ -112,3 +115,18 @@ class DataSource(SQLModel, table=True):
     is_enabled: bool = Field(default=True)
     last_accessed: Optional[datetime] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class AdminLog(SQLModel, table=True):
+    """Audit log for all admin actions."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    brand_id: int = Field(foreign_key="brand.id", index=True)
+    admin_user_id: str  # Admin user identifier
+    action: str  # e.g., "add_brand", "edit_ownership", "flag_dispute", "trigger_refresh"
+    description: str  # Detailed description of the action
+    timestamp: datetime = Field(default_factory=datetime.utcnow, index=True)
+    details: Optional[str] = None  # JSON serialized details of changes
+
+    # Relationships
+    brand: Brand = Relationship(back_populates="admin_logs")
