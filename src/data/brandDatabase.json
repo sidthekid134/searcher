@@ -1,0 +1,124 @@
+{
+  "brands": {
+    "whatsapp": {
+      "label": "WhatsApp",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 2014
+    },
+    "instagram": {
+      "label": "Instagram",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 2012
+    },
+    "oculus": {
+      "label": "Oculus",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 2014
+    },
+    "meta": {
+      "label": "Meta Platforms Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 2021
+    },
+    "facebook": {
+      "label": "Facebook",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 1997
+    },
+    "youtube": {
+      "label": "YouTube",
+      "ownedBy": "google",
+      "confidence": 0.95,
+      "acquisitionYear": 2006
+    },
+    "android": {
+      "label": "Android",
+      "ownedBy": "google",
+      "confidence": 0.95,
+      "acquisitionYear": 2005
+    },
+    "google": {
+      "label": "Alphabet Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1998
+    },
+    "deepmind": {
+      "label": "DeepMind",
+      "ownedBy": "google",
+      "confidence": 0.95,
+      "acquisitionYear": 2014
+    },
+    "slack": {
+      "label": "Slack",
+      "ownedBy": "salesforce",
+      "confidence": 0.95,
+      "acquisitionYear": 2021
+    },
+    "salesforce": {
+      "label": "Salesforce Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1999
+    },
+    "tableau": {
+      "label": "Tableau Software",
+      "ownedBy": "salesforce",
+      "confidence": 0.95,
+      "acquisitionYear": 2019
+    },
+    "github": {
+      "label": "GitHub",
+      "ownedBy": "microsoft",
+      "confidence": 0.95,
+      "acquisitionYear": 2018
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "ownedBy": "microsoft",
+      "confidence": 0.95,
+      "acquisitionYear": 2016
+    },
+    "microsoft": {
+      "label": "Microsoft Corporation",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1975
+    },
+    "npm": {
+      "label": "npm Inc.",
+      "ownedBy": "microsoft",
+      "confidence": 0.85,
+      "acquisitionYear": 2020
+    },
+    "amd": {
+      "label": "AMD",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1969
+    },
+    "xilinx": {
+      "label": "Xilinx",
+      "ownedBy": "amd",
+      "confidence": 0.95,
+      "acquisitionYear": 2022
+    },
+    "intel": {
+      "label": "Intel Corporation",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1968
+    },
+    "mobileye": {
+      "label": "Mobileye",
+      "ownedBy": "intel",
+      "confidence": 0.95,
+      "acquisitionYear": 2017
+    }
+  }
+}
