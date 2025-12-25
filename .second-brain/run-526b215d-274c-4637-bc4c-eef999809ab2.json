@@ -1,0 +1,342 @@
+{
+  "run_id": "50f07235-8f22-48dd-b756-362039c3c7de",
+  "project_id": "164b7e54-37da-4f2d-b870-78c4731cfc06",
+  "run_mode": "merge",
+  "run_number": 1,
+  "status": "done",
+  "started_at": "2025-12-25T05:12:13.781636",
+  "ended_at": "2025-12-25T05:25:06.283310",
+  "duration_seconds": 772.501674,
+  "coordinator_branch": null,
+  "intent_branch": "intent/corporate-lineage-transparency-engine-50f07235",
+  "pr_number": 11,
+  "pr_url": "https://github.com/sidthekid134/searcher/pull/11",
+  "total_stories": 5,
+  "completed_stories": 5,
+  "failed_stories": 0,
+  "snapshot": {
+    "id": "526b215d-274c-4637-bc4c-eef999809ab2",
+    "name": "Corporate Lineage Transparency Engine",
+    "description": "Build a web application called 'Who Really Owns It?' that enables users to search for consumer brands and discover their ultimate parent company through recursive ownership chain traversal. The core feature is a Private Equity Detection System that identifies when brands are owned by PE firms (Blackstone, KKR, Carlyle Group, etc.) and displays contextual warnings about potential quality degradation. The application must: (1) accept brand name queries via a minimalist search interface, (2) recursively traverse ownership hierarchies to identify ultimate holding companies, (3) classify ownership status as Independent/Founder-Owned (green), Publicly Traded Conglomerate (yellow), or Private Equity/VC-Owned (red), (4) display visual ownership chains and color-coded verdict cards, (5) trigger quality warning UI with acquisition year and time-since-acquisition counters for PE-owned brands, (6) provide contextual tooltips explaining PE ownership implications, (7) include a 'Hollow-Out Index' sentiment metric for PE brands, and (8) suggest independent competitor alternatives for PE-owned brands. The application should employ a dark mode, investigative aesthetic and maintain responsive mobile layouts.",
+    "dependencies": [],
+    "stories": [
+      {
+        "id": "46b570c1-3b0e-4b20-a74a-9d10acba87b2",
+        "title": "Brand Search with Ownership Chain Traversal",
+        "description": "Implement the core search functionality that accepts brand name queries and recursively traverses ownership hierarchies via Wikidata SPARQL API to identify ultimate parent companies. The system will handle incomplete data gracefully, display partial chains with confidence indicators, implement depth limits (max 10 levels) with cycle detection, and fall back to a hardcoded JSON database when Wikidata queries are unavailable.",
+        "objective": "Enable users to search for brands and retrieve their complete ownership chain from Wikidata with fallback database support.",
+        "acceptance_criteria": [
+          "Search bar accepts brand name input and triggers Wikidata SPARQL query using P127 (owned by) and P749 (parent organization) properties",
+          "Recursive traversal correctly identifies ultimate parent company within 10 levels, with cycle detection preventing infinite loops",
+          "Partial ownership chains display with confidence scores (e.g., '80% confident') when data is incomplete",
+          "Fallback to hardcoded JSON database occurs when Wikidata API is unavailable or times out after 5 seconds",
+          "Results display ownership chain as Brand -> Subsidiary -> Ultimate Parent with visual tree representation",
+          "Trending search suggestions appear below search bar based on most-searched brands"
+        ],
+        "implementation_notes": [
+          "Create a search input component with debounced onChange handler (300ms) to prevent excessive API calls",
+          "Implement Wikidata SPARQL client using fetch API with query template for P127/P749 properties; include 5-second timeout",
+          "Build recursive traversal function with Set-based cycle detection and depth counter; terminate at depth 10 or when ultimate parent found",
+          "Create fallback JSON database file (brands.json) with 100+ major brands and their ownership chains for offline functionality",
+          "Implement confidence scoring: assign 100% for direct Wikidata matches, 80% for partial chains, 60% for fallback database results",
+          "Build tree visualization component using SVG or canvas to render ownership hierarchy with connecting lines",
+          "Add trending suggestions by tracking search frequency in localStorage and displaying top 5 most-searched brands"
+        ],
+        "dependencies": [],
+        "workstream_id": "default",
+        "complexity_score": 5,
+        "estimated_tokens": 5000,
+        "status": "draft",
+        "order_index": 0,
+        "preferences": {
+          "execution_overrides": {
+            "model": "claude-haiku-4-5-20251001"
+          }
+        }
+      },
+      {
+        "id": "e975da71-6810-45ad-bc58-180f8bc35cdf",
+        "title": "ShadCN Dark Mode UI with Responsive Layout",
+        "description": "Implement the complete user interface using ShadCN component library with dark mode aesthetic, investigative/journalistic design, and responsive mobile layouts. The application will feature a minimalist search interface, animated results reveal, color-coded verdict cards, quality warning UI, contextual tooltips, and mobile-optimized navigation. All components will follow dark mode design principles with high contrast and accent colors.",
+        "objective": "Build responsive, dark-themed UI using ShadCN components with investigative design aesthetic and mobile-first layout.",
+        "acceptance_criteria": [
+          "ShadCN components are installed and configured with dark mode as default theme using next-themes or similar provider",
+          "Search interface uses ShadCN Input and Command components with centered layout on desktop and full-width on mobile",
+          "Results page uses ShadCN Card, Badge, Alert, and Tooltip components for verdict cards, status indicators, and contextual help",
+          "Color-coded verdict cards leverage ShadCN's variant system (destructive for red, default for yellow, success for green)",
+          "Animations respect prefers-reduced-motion and use ShadCN's built-in animation utilities from Tailwind CSS",
+          "Mobile viewport (320px-480px) displays single-column layout; tablet (768px+) uses ShadCN's responsive grid system",
+          "All interactive elements use ShadCN's focus-visible states and meet WCAG AA contrast requirements (4.5:1)",
+          "Light/dark mode toggle implemented using ShadCN Button and next-themes with persistent user preference"
+        ],
+        "implementation_notes": [
+          "Install ShadCN UI: npx shadcn-ui@latest init; configure with dark mode, Tailwind CSS, and CSS variables for theming",
+          "Add required ShadCN components: npx shadcn-ui@latest add button card input badge alert tooltip command separator progress",
+          "Configure next-themes provider in root layout with defaultTheme='dark' and enableSystem={false} for consistent dark mode",
+          "Create custom CSS variables in globals.css extending ShadCN's default palette: --success (green), --warning (yellow), --danger (red)",
+          "Build search interface using Command component with CommandInput for search bar and CommandList for trending suggestions",
+          "Implement verdict card using Card component with conditional className based on ownership type: 'border-green-500' for Independent, 'border-red-500' for PE",
+          "Use Badge component with variant='outline' for confidence indicators and variant='default' for ownership status labels",
+          "Create tooltip wrappers using TooltipProvider, Tooltip, TooltipTrigger, and TooltipContent for PE ownership explanations",
+          "Implement responsive layout using Tailwind's responsive prefixes: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3' for adaptive columns",
+          "Add animations using Tailwind's animate utilities: 'animate-pulse' for red flash, 'animate-in fade-in' for green fade",
+          "Build theme toggle using Button with Moon/Sun icons from lucide-react; use useTheme hook from next-themes to toggle between light/dark",
+          "Ensure all touch targets meet 44x44px minimum by applying 'min-h-11 min-w-11' classes to interactive ShadCN components",
+          "Test accessibility using ShadCN's built-in ARIA attributes and keyboard navigation support; verify with screen reader"
+        ],
+        "dependencies": [
+          {
+            "type": "story",
+            "id": "db15a0a5-3ac5-4125-bcea-cb6ffc2347c6"
+          }
+        ],
+        "workstream_id": "default",
+        "complexity_score": 5,
+        "estimated_tokens": 5000,
+        "status": "draft",
+        "order_index": 4,
+        "preferences": {
+          "execution_overrides": {
+            "model": "claude-haiku-4-5-20251001"
+          }
+        }
+      },
+      {
+        "id": "db15a0a5-3ac5-4125-bcea-cb6ffc2347c6",
+        "title": "Independent Alternatives Recommendation Engine",
+        "description": "Implement the Better Alternatives section that suggests independent or founder-owned competitor brands when a PE-owned brand is detected. The system will maintain a curated database of brand categories and independent alternatives, display them with brief descriptions, and include links to their websites or e-commerce pages.",
+        "objective": "Suggest independent competitor alternatives for PE-owned brands with category matching and direct links.",
+        "acceptance_criteria": [
+          "When a PE-owned brand is detected, 'Better Alternatives' section appears below the verdict card",
+          "Alternatives are matched by product category (e.g., if brand is a coffee company, suggest independent coffee brands)",
+          "Each alternative displays brand name, brief description (1-2 sentences), ownership status (green badge), and link to website",
+          "Minimum 2-3 alternatives are suggested per brand; maximum 5 to avoid overwhelming users",
+          "Alternatives are sourced from curated database and verified as independent/founder-owned via Wikidata",
+          "Section includes disclaimer: 'These alternatives are independently verified as non-PE owned as of [date]'"
+        ],
+        "implementation_notes": [
+          "Create alternatives database (alternatives.json) with structure: { category, alternatives: [{ name, description, website, wikidata_id }] }",
+          "Implement category detection: map searched brand to category using hardcoded mapping or Wikidata P31 (instance of) property",
+          "Build alternatives matching function that filters alternatives.json by category and returns 2-5 results",
+          "Verify each alternative's independence by querying Wikidata; re-check quarterly to update status",
+          "Create alternatives card component displaying brand name, description, green 'Independent' badge, and clickable website link",
+          "Add disclaimer text with current date; update date monthly using build-time script or server-side logic",
+          "Implement fallback: if no alternatives found for category, display message 'No verified independent alternatives found yet' with option to suggest one"
+        ],
+        "dependencies": [
+          {
+            "type": "story",
+            "id": "ebc47d46-c7c8-443d-8b5c-1b4bf2786625"
+          }
+        ],
+        "workstream_id": "default",
+        "complexity_score": 5,
+        "estimated_tokens": 5000,
+        "status": "draft",
+        "order_index": 3,
+        "preferences": {
+          "execution_overrides": {
+            "model": "claude-haiku-4-5-20251001"
+          }
+        }
+      },
+      {
+        "id": "e9ef8fee-07e8-4b60-b8b0-4f1c4b20d2bf",
+        "title": "PE Detection & Ownership Classification System",
+        "description": "Implement the Private Equity Detection System that classifies ultimate parent companies as Independent/Founder-Owned (green), Publicly Traded Conglomerate (yellow), or Private Equity/VC-Owned (red). The system will dynamically identify PE firms using Wikidata entity classification and keyword matching against a curated blacklist of 50+ major PE firms, then display color-coded verdict cards with acquisition year and time-since-acquisition counters.",
+        "objective": "Classify brand ownership status and detect PE ownership with color-coded visual feedback and acquisition timeline.",
+        "acceptance_criteria": [
+          "Ultimate parent company is classified into one of three categories: Green (Independent/Founder-Owned), Yellow (Publicly Traded), or Red (PE/VC-Owned)",
+          "PE firm detection uses Wikidata entity classification (checking for 'private equity firm' or 'venture capital firm' types) with fallback to keyword matching against curated blacklist",
+          "Color-coded verdict card displays ownership status, parent company name, and classification confidence",
+          "For PE-owned brands, acquisition year is displayed with real-time counter showing years/months since acquisition",
+          "Red flash animation triggers when PE ownership is detected; green fade animation for independent brands",
+          "Tooltip appears on hover explaining PE ownership implications and quality degradation risks"
+        ],
+        "implementation_notes": [
+          "Create PE firm database (pe_firms.json) containing 50+ major PE firms (Blackstone, KKR, Carlyle Group, Apollo, etc.) with Wikidata entity IDs and keywords",
+          "Implement classification function that queries Wikidata for entity type; check for 'private equity' or 'venture capital' keywords in description",
+          "Build fallback keyword matcher that searches parent company name against PE firm blacklist using case-insensitive substring matching",
+          "Create verdict card component with conditional styling: green background for Independent, yellow for Publicly Traded, red for PE-owned",
+          "Implement acquisition year lookup: query Wikidata P580 (start time) property for acquisition date; calculate time-since-acquisition using current date",
+          "Add CSS animations: @keyframes redFlash for PE (red background pulse 3 times), @keyframes greenFade for Independent (green background fade-in over 1s)",
+          "Build tooltip component using title attribute or custom div with position: absolute; include text explaining PE cost-cutting practices and quality risks"
+        ],
+        "dependencies": [
+          {
+            "type": "story",
+            "id": "46b570c1-3b0e-4b20-a74a-9d10acba87b2"
+          }
+        ],
+        "workstream_id": "default",
+        "complexity_score": 5,
+        "estimated_tokens": 5000,
+        "status": "draft",
+        "order_index": 1,
+        "preferences": {
+          "execution_overrides": {
+            "model": "claude-haiku-4-5-20251001"
+          }
+        }
+      },
+      {
+        "id": "ebc47d46-c7c8-443d-8b5c-1b4bf2786625",
+        "title": "Hollow-Out Index Quality Degradation Metric",
+        "description": "Implement the Hollow-Out Index sentiment metric that quantifies potential quality degradation for PE-owned brands by analyzing historical product reviews and ratings before/after acquisition. The system will aggregate sentiment data from public sources, calculate a degradation score (0-100), and display it alongside contextual explanations of what the metric means for consumers.",
+        "objective": "Calculate and display a Hollow-Out Index sentiment metric showing quality degradation trends for PE-owned brands.",
+        "acceptance_criteria": [
+          "Hollow-Out Index displays as a numeric score (0-100) with visual gauge/progress bar for PE-owned brands only",
+          "Score is calculated by comparing average product ratings/sentiment before and after acquisition year",
+          "Index includes confidence indicator showing data quality (e.g., 'Based on 500+ reviews')",
+          "Tooltip explains what the index means: scores above 60 indicate significant quality degradation risk",
+          "Historical trend chart shows rating trajectory before/after acquisition with clear visual demarcation of acquisition date",
+          "For brands with insufficient data, display 'Insufficient data' message with option to submit corrections"
+        ],
+        "implementation_notes": [
+          "Create sentiment analysis pipeline using pre-computed review data (mock data initially, can integrate with review APIs later)",
+          "Build Hollow-Out Index calculation: (pre_acquisition_avg_rating - post_acquisition_avg_rating) / pre_acquisition_avg_rating * 100; cap at 0-100 range",
+          "Implement confidence scoring based on review count: 100% confidence if 500+ reviews, 80% if 100-500, 60% if <100",
+          "Create gauge component using SVG or canvas with color gradient: green (0-30), yellow (30-60), red (60-100)",
+          "Build historical trend chart using Chart.js or similar library; plot monthly average ratings with vertical line marking acquisition date",
+          "Store mock review data in JSON file with structure: { brand_id, pre_acquisition_reviews: [], post_acquisition_reviews: [] }",
+          "Add user correction submission form allowing users to flag inaccurate data; store submissions in localStorage for future review"
+        ],
+        "dependencies": [
+          {
+            "type": "story",
+            "id": "e9ef8fee-07e8-4b60-b8b0-4f1c4b20d2bf"
+          }
+        ],
+        "workstream_id": "default",
+        "complexity_score": 5,
+        "estimated_tokens": 5000,
+        "status": "draft",
+        "order_index": 2,
+        "preferences": {
+          "execution_overrides": {
+            "model": "claude-haiku-4-5-20251001"
+          }
+        }
+      }
+    ]
+  },
+  "story_executions": [
+    {
+      "story_id": "46b570c1-3b0e-4b20-a74a-9d10acba87b2",
+      "title": "Brand Search with Ownership Chain Traversal",
+      "description": "Implement the core search functionality that accepts brand name queries and recursively traverses ownership hierarchies via Wikidata SPARQL API to identify ultimate parent companies. The system will handle incomplete data gracefully, display partial chains with confidence indicators, implement depth limits (max 10 levels) with cycle detection, and fall back to a hardcoded JSON database when Wikidata queries are unavailable.",
+      "objective": "Enable users to search for brands and retrieve their complete ownership chain from Wikidata with fallback database support.",
+      "execution_id": "1973c00e-e20a-467d-ad0d-eaf98d7eae1b",
+      "attempt_number": 1,
+      "status": "done",
+      "agent_id": "claude-engineer-1",
+      "agent_name": "Data Visualization Specialist",
+      "branch": "story/46b570c1-3b0e-4b20-a74a-9d10acba87b2-50f07235",
+      "commit_sha": null,
+      "pr_number": 6,
+      "pr_url": "https://github.com/sidthekid134/searcher/pull/6",
+      "started_at": "2025-12-25T05:12:14.316952",
+      "ended_at": "2025-12-25T05:15:20.166663",
+      "duration_seconds": 185.849711,
+      "messages_count": null,
+      "files_modified": 1,
+      "lines_added": 0,
+      "lines_removed": 0,
+      "error_message": null
+    },
+    {
+      "story_id": "e975da71-6810-45ad-bc58-180f8bc35cdf",
+      "title": "ShadCN Dark Mode UI with Responsive Layout",
+      "description": "Implement the complete user interface using ShadCN component library with dark mode aesthetic, investigative/journalistic design, and responsive mobile layouts. The application will feature a minimalist search interface, animated results reveal, color-coded verdict cards, quality warning UI, contextual tooltips, and mobile-optimized navigation. All components will follow dark mode design principles with high contrast and accent colors.",
+      "objective": "Build responsive, dark-themed UI using ShadCN components with investigative design aesthetic and mobile-first layout.",
+      "execution_id": "8fd11112-6efe-4876-b3db-9aa6b2b8402b",
+      "attempt_number": 1,
+      "status": "done",
+      "agent_id": "claude-engineer-1",
+      "agent_name": "Frontend Component Specialist",
+      "branch": "story/e975da71-6810-45ad-bc58-180f8bc35cdf-50f07235",
+      "commit_sha": null,
+      "pr_number": 10,
+      "pr_url": "https://github.com/sidthekid134/searcher/pull/10",
+      "started_at": "2025-12-25T05:22:48.320306",
+      "ended_at": "2025-12-25T05:25:02.837911",
+      "duration_seconds": 134.517605,
+      "messages_count": null,
+      "files_modified": 1,
+      "lines_added": 0,
+      "lines_removed": 0,
+      "error_message": null
+    },
+    {
+      "story_id": "db15a0a5-3ac5-4125-bcea-cb6ffc2347c6",
+      "title": "Independent Alternatives Recommendation Engine",
+      "description": "Implement the Better Alternatives section that suggests independent or founder-owned competitor brands when a PE-owned brand is detected. The system will maintain a curated database of brand categories and independent alternatives, display them with brief descriptions, and include links to their websites or e-commerce pages.",
+      "objective": "Suggest independent competitor alternatives for PE-owned brands with category matching and direct links.",
+      "execution_id": "6b315407-69c9-4db2-b688-5faae4f0147c",
+      "attempt_number": 1,
+      "status": "done",
+      "agent_id": "claude-engineer-1",
+      "agent_name": "Brand Alternatives Specialist",
+      "branch": "story/db15a0a5-3ac5-4125-bcea-cb6ffc2347c6-50f07235",
+      "commit_sha": null,
+      "pr_number": 9,
+      "pr_url": "https://github.com/sidthekid134/searcher/pull/9",
+      "started_at": "2025-12-25T05:21:02.239119",
+      "ended_at": "2025-12-25T05:22:46.974866",
+      "duration_seconds": 104.735747,
+      "messages_count": null,
+      "files_modified": 1,
+      "lines_added": 0,
+      "lines_removed": 0,
+      "error_message": null
+    },
+    {
+      "story_id": "e9ef8fee-07e8-4b60-b8b0-4f1c4b20d2bf",
+      "title": "PE Detection & Ownership Classification System",
+      "description": "Implement the Private Equity Detection System that classifies ultimate parent companies as Independent/Founder-Owned (green), Publicly Traded Conglomerate (yellow), or Private Equity/VC-Owned (red). The system will dynamically identify PE firms using Wikidata entity classification and keyword matching against a curated blacklist of 50+ major PE firms, then display color-coded verdict cards with acquisition year and time-since-acquisition counters.",
+      "objective": "Classify brand ownership status and detect PE ownership with color-coded visual feedback and acquisition timeline.",
+      "execution_id": "2524a021-d0f8-43ff-bbd9-caa671e46ca9",
+      "attempt_number": 1,
+      "status": "done",
+      "agent_id": "claude-engineer-1",
+      "agent_name": "Data Visualization Specialist",
+      "branch": "story/e9ef8fee-07e8-4b60-b8b0-4f1c4b20d2bf-50f07235",
+      "commit_sha": null,
+      "pr_number": 7,
+      "pr_url": "https://github.com/sidthekid134/searcher/pull/7",
+      "started_at": "2025-12-25T05:15:21.561216",
+      "ended_at": "2025-12-25T05:18:19.254355",
+      "duration_seconds": 177.693139,
+      "messages_count": null,
+      "files_modified": 3,
+      "lines_added": 0,
+      "lines_removed": 0,
+      "error_message": null
+    },
+    {
+      "story_id": "ebc47d46-c7c8-443d-8b5c-1b4bf2786625",
+      "title": "Hollow-Out Index Quality Degradation Metric",
+      "description": "Implement the Hollow-Out Index sentiment metric that quantifies potential quality degradation for PE-owned brands by analyzing historical product reviews and ratings before/after acquisition. The system will aggregate sentiment data from public sources, calculate a degradation score (0-100), and display it alongside contextual explanations of what the metric means for consumers.",
+      "objective": "Calculate and display a Hollow-Out Index sentiment metric showing quality degradation trends for PE-owned brands.",
+      "execution_id": "4f236c02-b3fa-4f59-969d-709666a32f8b",
+      "attempt_number": 1,
+      "status": "done",
+      "agent_id": "claude-engineer-1",
+      "agent_name": "Data Visualization Specialist",
+      "branch": "story/ebc47d46-c7c8-443d-8b5c-1b4bf2786625-50f07235",
+      "commit_sha": null,
+      "pr_number": 8,
+      "pr_url": "https://github.com/sidthekid134/searcher/pull/8",
+      "started_at": "2025-12-25T05:18:20.699543",
+      "ended_at": "2025-12-25T05:21:00.851400",
+      "duration_seconds": 160.151857,
+      "messages_count": null,
+      "files_modified": 3,
+      "lines_added": 0,
+      "lines_removed": 0,
+      "error_message": null
+    }
+  ],
+  "created_at": "2025-12-25T05:12:13.549467+00:00",
+  "updated_at": "2025-12-25T05:25:06.289175+00:00"
+}

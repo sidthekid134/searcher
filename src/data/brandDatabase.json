@@ -1,0 +1,286 @@
+{
+  "brands": {
+    "whatsapp": {
+      "label": "WhatsApp",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 2014,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.6,
+          "reviewCount": 450,
+          "periodStart": 2009,
+          "periodEnd": 2013
+        },
+        "afterAcquisition": {
+          "avgRating": 3.9,
+          "reviewCount": 2800,
+          "periodStart": 2014,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "instagram": {
+      "label": "Instagram",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 2012,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.7,
+          "reviewCount": 320,
+          "periodStart": 2010,
+          "periodEnd": 2011
+        },
+        "afterAcquisition": {
+          "avgRating": 3.8,
+          "reviewCount": 3200,
+          "periodStart": 2012,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "oculus": {
+      "label": "Oculus",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 2014,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.4,
+          "reviewCount": 280,
+          "periodStart": 2012,
+          "periodEnd": 2013
+        },
+        "afterAcquisition": {
+          "avgRating": 3.5,
+          "reviewCount": 1800,
+          "periodStart": 2014,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "meta": {
+      "label": "Meta Platforms Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 2021
+    },
+    "facebook": {
+      "label": "Facebook",
+      "ownedBy": "meta",
+      "confidence": 0.95,
+      "acquisitionYear": 1997
+    },
+    "youtube": {
+      "label": "YouTube",
+      "ownedBy": "google",
+      "confidence": 0.95,
+      "acquisitionYear": 2006
+    },
+    "android": {
+      "label": "Android",
+      "ownedBy": "google",
+      "confidence": 0.95,
+      "acquisitionYear": 2005
+    },
+    "google": {
+      "label": "Alphabet Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1998
+    },
+    "deepmind": {
+      "label": "DeepMind",
+      "ownedBy": "google",
+      "confidence": 0.95,
+      "acquisitionYear": 2014
+    },
+    "slack": {
+      "label": "Slack Technologies Inc.",
+      "ownedBy": "salesforce",
+      "confidence": 0.95,
+      "acquisitionYear": 2021,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.5,
+          "reviewCount": 1200,
+          "periodStart": 2013,
+          "periodEnd": 2020
+        },
+        "afterAcquisition": {
+          "avgRating": 3.9,
+          "reviewCount": 900,
+          "periodStart": 2021,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "salesforce": {
+      "label": "Salesforce Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1999
+    },
+    "tableau": {
+      "label": "Tableau Software",
+      "ownedBy": "salesforce",
+      "confidence": 0.95,
+      "acquisitionYear": 2019,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.4,
+          "reviewCount": 650,
+          "periodStart": 2013,
+          "periodEnd": 2018
+        },
+        "afterAcquisition": {
+          "avgRating": 3.7,
+          "reviewCount": 750,
+          "periodStart": 2019,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "github": {
+      "label": "GitHub",
+      "ownedBy": "microsoft",
+      "confidence": 0.95,
+      "acquisitionYear": 2018,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.5,
+          "reviewCount": 2100,
+          "periodStart": 2011,
+          "periodEnd": 2017
+        },
+        "afterAcquisition": {
+          "avgRating": 3.8,
+          "reviewCount": 3500,
+          "periodStart": 2018,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "linkedin": {
+      "label": "LinkedIn",
+      "ownedBy": "microsoft",
+      "confidence": 0.95,
+      "acquisitionYear": 2016,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.3,
+          "reviewCount": 1800,
+          "periodStart": 2011,
+          "periodEnd": 2015
+        },
+        "afterAcquisition": {
+          "avgRating": 3.6,
+          "reviewCount": 2900,
+          "periodStart": 2016,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "microsoft": {
+      "label": "Microsoft Corporation",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1975
+    },
+    "npm": {
+      "label": "npm Inc.",
+      "ownedBy": "microsoft",
+      "confidence": 0.85,
+      "acquisitionYear": 2020
+    },
+    "amd": {
+      "label": "AMD",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1969
+    },
+    "xilinx": {
+      "label": "Xilinx",
+      "ownedBy": "amd",
+      "confidence": 0.95,
+      "acquisitionYear": 2022
+    },
+    "intel": {
+      "label": "Intel Corporation",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1968
+    },
+    "mobileye": {
+      "label": "Mobileye",
+      "ownedBy": "intel",
+      "confidence": 0.95,
+      "acquisitionYear": 2017
+    },
+    "zendesk": {
+      "label": "Zendesk Inc.",
+      "ownedBy": "apollo",
+      "confidence": 0.85,
+      "acquisitionYear": 2022,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.2,
+          "reviewCount": 880,
+          "periodStart": 2014,
+          "periodEnd": 2021
+        },
+        "afterAcquisition": {
+          "avgRating": 3.4,
+          "reviewCount": 520,
+          "periodStart": 2022,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "apollo": {
+      "label": "Apollo Global Management",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1990
+    },
+    "qualtrics": {
+      "label": "Qualtrics International Inc.",
+      "ownedBy": "blackstone",
+      "confidence": 0.85,
+      "acquisitionYear": 2023,
+      "sentimentData": {
+        "beforeAcquisition": {
+          "avgRating": 4.1,
+          "reviewCount": 720,
+          "periodStart": 2018,
+          "periodEnd": 2022
+        },
+        "afterAcquisition": {
+          "avgRating": 3.2,
+          "reviewCount": 350,
+          "periodStart": 2023,
+          "periodEnd": 2024
+        }
+      }
+    },
+    "blackstone": {
+      "label": "Blackstone Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1985
+    },
+    "turbotax": {
+      "label": "TurboTax",
+      "ownedBy": "intuit",
+      "confidence": 0.95,
+      "acquisitionYear": 1997
+    },
+    "intuit": {
+      "label": "Intuit Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1983
+    }
+  }
+}
