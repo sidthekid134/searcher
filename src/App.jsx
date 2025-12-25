@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar.jsx';
 import OwnershipTree from './components/OwnershipTree.jsx';
+import VerdictCard from './components/VerdictCard.jsx';
 import { getOwnershipChain } from './services/ownershipChainService.js';
 import { addSearchToHistory } from './services/searchHistoryService.js';
 import './App.css';
@@ -85,6 +86,16 @@ export default function App() {
                 </p>
               </div>
             </div>
+
+            {/* Ownership Status Verdict Card */}
+            {result.chain.length > 0 && (
+              <div className="verdict-section">
+                <VerdictCard
+                  ultimateParent={result.chain[result.chain.length - 1]}
+                  acquisitionYear={result.chain[result.chain.length - 1].acquisitionYear}
+                />
+              </div>
+            )}
 
             <OwnershipTree chain={result.chain} source={result.source} />
           </div>
