@@ -7,6 +7,7 @@ import {
   getStatusLabel
 } from '../services/ownershipClassificationService.js';
 import HollowOutIndex from './HollowOutIndex.jsx';
+import BetterAlternatives from './BetterAlternatives.jsx';
 import '../styles/VerdictCard.css';
 
 export default function VerdictCard({ ultimateParent, acquisitionYear, brandData }) {
@@ -132,6 +133,14 @@ export default function VerdictCard({ ultimateParent, acquisitionYear, brandData
         brand={brandData}
         isPEOwned={classification.isPEOwned}
       />
+
+      {/* Better Alternatives for PE-owned brands */}
+      {classification.isPEOwned && (
+        <BetterAlternatives
+          brandName={ultimateParent?.label || ''}
+          brandData={brandData}
+        />
+      )}
     </div>
   );
 }

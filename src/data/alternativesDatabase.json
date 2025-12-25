@@ -1,0 +1,426 @@
+{
+  "categories": {
+    "messaging": {
+      "name": "Messaging & Communication",
+      "keywords": ["chat", "messaging", "communication", "messenger", "whatsapp", "signal"]
+    },
+    "social_media": {
+      "name": "Social Media",
+      "keywords": ["social", "media", "instagram", "photo", "network", "facebook"]
+    },
+    "video": {
+      "name": "Video & Streaming",
+      "keywords": ["video", "streaming", "youtube", "streaming platform"]
+    },
+    "customer_service": {
+      "name": "Customer Service & Support",
+      "keywords": ["customer service", "support", "helpdesk", "zendesk", "ticketing"]
+    },
+    "data_analytics": {
+      "name": "Data Analytics & Surveys",
+      "keywords": ["analytics", "survey", "data", "qualtrics", "insights"]
+    },
+    "developer_tools": {
+      "name": "Developer Tools & Collaboration",
+      "keywords": ["developer", "code", "github", "repository", "git", "slack", "collaboration"]
+    },
+    "vr_ar": {
+      "name": "VR/AR & Gaming",
+      "keywords": ["vr", "virtual reality", "oculus", "headset", "metaverse"]
+    },
+    "tax_finance": {
+      "name": "Tax & Financial Software",
+      "keywords": ["tax", "turbotax", "finance", "accounting", "financial"]
+    },
+    "semiconductor": {
+      "name": "Semiconductors & Processors",
+      "keywords": ["semiconductor", "processor", "cpu", "xilinx", "mobileye", "intel", "amd"]
+    },
+    "crm": {
+      "name": "CRM & Business Software",
+      "keywords": ["crm", "salesforce", "business", "enterprise", "tableau"]
+    }
+  },
+  "alternatives": {
+    "whatsapp": {
+      "category": "messaging",
+      "alternatives": [
+        {
+          "id": "signal",
+          "name": "Signal",
+          "description": "Privacy-focused encrypted messaging app developed by the Signal Technology Foundation. Offers end-to-end encryption and is committed to user privacy.",
+          "website": "https://signal.org",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q66039"
+        },
+        {
+          "id": "telegram",
+          "name": "Telegram",
+          "description": "Cloud-based messaging platform with optional end-to-end encryption. Known for speed and support for large group chats and channels.",
+          "website": "https://telegram.org",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q1165"
+        },
+        {
+          "id": "wickr",
+          "name": "Wickr Me",
+          "description": "Secure messaging app with automatic message deletion and private storage. Focus on privacy and security for enterprise users.",
+          "website": "https://www.wickr.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q7998799"
+        },
+        {
+          "id": "wire",
+          "name": "Wire",
+          "description": "Open-source team communication platform with end-to-end encryption. Suitable for business and personal use with strong privacy features.",
+          "website": "https://wire.com",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q19827251"
+        },
+        {
+          "id": "matrix",
+          "name": "Matrix/Element",
+          "description": "Decentralized, open-source communication protocol. Element is the reference client providing encrypted messaging and video calls.",
+          "website": "https://element.io",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q28378394"
+        }
+      ]
+    },
+    "instagram": {
+      "category": "social_media",
+      "alternatives": [
+        {
+          "id": "pixelfed",
+          "name": "Pixelfed",
+          "description": "Decentralized, federated photo-sharing social network. An open-source alternative focused on photography and community interaction.",
+          "website": "https://pixelfed.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "mastodon",
+          "name": "Mastodon",
+          "description": "Decentralized social network built on open standards. Provides a Twitter-like experience without corporate control or algorithmic feeds.",
+          "website": "https://joinmastodon.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q74897186"
+        },
+        {
+          "id": "bluesky",
+          "name": "Bluesky",
+          "description": "Open social protocol by Jack Dorsey aiming to decentralize social media. Users have control over their data and can choose hosting providers.",
+          "website": "https://bluesky.app",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q110560260"
+        },
+        {
+          "id": "threads",
+          "name": "Threads (Open Source Movement)",
+          "description": "Community-driven photo sharing platforms built on open-source standards. Examples include PeerTube and Lemmy integrations.",
+          "website": "https://www.threadsopenstandards.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        }
+      ]
+    },
+    "facebook": {
+      "category": "social_media",
+      "alternatives": [
+        {
+          "id": "mastodon",
+          "name": "Mastodon",
+          "description": "Decentralized social network built on open standards. Provides a Twitter-like experience without corporate control or algorithmic feeds.",
+          "website": "https://joinmastodon.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q74897186"
+        },
+        {
+          "id": "pixelfed",
+          "name": "Pixelfed",
+          "description": "Decentralized, federated photo-sharing social network. An open-source alternative focused on photography and community interaction.",
+          "website": "https://pixelfed.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "friendica",
+          "name": "Friendica",
+          "description": "Decentralized social network focused on community and friendship. Offers federation with other platforms and strong privacy controls.",
+          "website": "https://friendi.ca",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q10159310"
+        }
+      ]
+    },
+    "youtube": {
+      "category": "video",
+      "alternatives": [
+        {
+          "id": "peertube",
+          "name": "PeerTube",
+          "description": "Decentralized, open-source video hosting and sharing platform. Users can host their own instances and content is not controlled by a single entity.",
+          "website": "https://joinpeertube.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q55996904"
+        },
+        {
+          "id": "odysee",
+          "name": "Odysee",
+          "description": "Open-source video platform built on blockchain. Creators maintain control of content and earn through the platform's reward system.",
+          "website": "https://odysee.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q19957293"
+        },
+        {
+          "id": "rumble",
+          "name": "Rumble",
+          "description": "Independent video hosting and sharing platform. Offers monetization for creators and focus on creator freedom.",
+          "website": "https://rumble.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q63313262"
+        }
+      ]
+    },
+    "oculus": {
+      "category": "vr_ar",
+      "alternatives": [
+        {
+          "id": "htcvive",
+          "name": "HTC Vive",
+          "description": "Virtual reality headset and platform by HTC. Offers immersive VR experiences with strong hardware and content ecosystem.",
+          "website": "https://www.vive.com",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q16891571"
+        },
+        {
+          "id": "valveindex",
+          "name": "Valve Index",
+          "description": "Premium VR headset by Valve Corporation. Developed by a founder-led company with focus on high-quality VR hardware and games.",
+          "website": "https://www.valvesoftware.com/en/index/headset/",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q65107226"
+        },
+        {
+          "id": "playstation_vr",
+          "name": "PlayStation VR",
+          "description": "Virtual reality platform for PlayStation by Sony. Offers affordable VR gaming with strong first-party game lineup.",
+          "website": "https://www.playstation.com/en-us/ps-vr/",
+          "ownershipStatus": "publicly-traded",
+          "wikidataEntity": "Q29058896"
+        }
+      ]
+    },
+    "slack": {
+      "category": "developer_tools",
+      "alternatives": [
+        {
+          "id": "mattermost",
+          "name": "Mattermost",
+          "description": "Open-source team collaboration platform. Self-hosted option with full control over data and no corporate dependencies.",
+          "website": "https://mattermost.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q29029854"
+        },
+        {
+          "id": "zulip",
+          "name": "Zulip",
+          "description": "Open-source team chat application with powerful topic-based messaging. Better for organized conversations and context preservation.",
+          "website": "https://zulip.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q21003345"
+        },
+        {
+          "id": "rocket_chat",
+          "name": "Rocket.Chat",
+          "description": "Open-source team communication platform. Can be self-hosted with full control and integrations with various tools.",
+          "website": "https://rocket.chat",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q27878571"
+        },
+        {
+          "id": "jitsi",
+          "name": "Jitsi",
+          "description": "Open-source video conferencing and team chat platform. Secure, self-hosted alternative for team collaboration.",
+          "website": "https://jitsi.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q59502370"
+        }
+      ]
+    },
+    "github": {
+      "category": "developer_tools",
+      "alternatives": [
+        {
+          "id": "gitlab",
+          "name": "GitLab",
+          "description": "DevOps platform with git repository hosting and CI/CD. Available as open-source or managed solution with strong development tools.",
+          "website": "https://gitlab.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q16639197"
+        },
+        {
+          "id": "gitea",
+          "name": "Gitea",
+          "description": "Open-source, lightweight git service. Easy to self-host and maintain, perfect for organizations wanting full control.",
+          "website": "https://gitea.io",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "forgejo",
+          "name": "Forgejo",
+          "description": "Community-driven, lightweight git forge. Fork of Gitea focused on independence and community governance.",
+          "website": "https://forgejo.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "sourcehut",
+          "name": "SourceHut",
+          "description": "Minimal git hosting and project management. Independent, privacy-focused alternative with email-based workflows.",
+          "website": "https://sourcehut.org",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q58625370"
+        }
+      ]
+    },
+    "zendesk": {
+      "category": "customer_service",
+      "alternatives": [
+        {
+          "id": "osticket",
+          "name": "osTicket",
+          "description": "Open-source support ticket system. Free and self-hosted option with customizable workflow and reporting.",
+          "website": "https://osticket.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "uvdesk",
+          "name": "UVdesk",
+          "description": "Open-source customer service software. Community-driven helpdesk with multichannel support and automation.",
+          "website": "https://www.uvdesk.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "chatwoot",
+          "name": "Chatwoot",
+          "description": "Open-source customer communication platform. Self-hosted option for customer support, live chat, and email management.",
+          "website": "https://www.chatwoot.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q95234968"
+        }
+      ]
+    },
+    "qualtrics": {
+      "category": "data_analytics",
+      "alternatives": [
+        {
+          "id": "limesurvey",
+          "name": "LimeSurvey",
+          "description": "Open-source survey and questionnaire tool. Self-hosted option with powerful survey logic and data analysis.",
+          "website": "https://www.limesurvey.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q1853819"
+        },
+        {
+          "id": "opal",
+          "name": "Opal",
+          "description": "Open-source research and data collection platform. Focus on academic and enterprise research with privacy controls.",
+          "website": "https://opal-project.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "cryptpad",
+          "name": "CryptPad",
+          "description": "End-to-end encrypted survey and collaboration tool. Privacy-first alternative for data collection and analysis.",
+          "website": "https://cryptpad.fr",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q64589104"
+        }
+      ]
+    },
+    "tableau": {
+      "category": "data_analytics",
+      "alternatives": [
+        {
+          "id": "metabase",
+          "name": "Metabase",
+          "description": "Open-source business intelligence and analytics tool. Self-hosted option for dashboards, reports, and data exploration.",
+          "website": "https://www.metabase.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q26825814"
+        },
+        {
+          "id": "grafana",
+          "name": "Grafana",
+          "description": "Open-source visualization and monitoring platform. Excellent for dashboards and real-time data visualization.",
+          "website": "https://grafana.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q23052169"
+        },
+        {
+          "id": "superset",
+          "name": "Apache Superset",
+          "description": "Open-source data visualization platform. Modern, enterprise-ready tool for dashboarding and data exploration.",
+          "website": "https://superset.apache.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        }
+      ]
+    },
+    "turbotax": {
+      "category": "tax_finance",
+      "alternatives": [
+        {
+          "id": "gnucash",
+          "name": "GnuCash",
+          "description": "Free, open-source personal and small business financial accounting software. Community-supported with no licensing fees.",
+          "website": "https://www.gnucash.org",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q1378346"
+        },
+        {
+          "id": "libretax",
+          "name": "LibreTax",
+          "description": "Open-source tax preparation software. Community-driven alternative to commercial tax software.",
+          "website": "https://libretax.io",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        },
+        {
+          "id": "efile",
+          "name": "eFile.com",
+          "description": "Independent tax filing service. Affordable, customer-focused tax preparation and filing.",
+          "website": "https://www.efile.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": null
+        }
+      ]
+    },
+    "xilinx": {
+      "category": "semiconductor",
+      "alternatives": [
+        {
+          "id": "lattice",
+          "name": "Lattice Semiconductor",
+          "description": "Independent semiconductor company specializing in FPGAs and PLDs. Founded in 1983 and remains independent.",
+          "website": "https://www.latticesemi.com",
+          "ownershipStatus": "founder-owned",
+          "wikidataEntity": "Q3216843"
+        },
+        {
+          "id": "microsemi",
+          "name": "Microchip Microsemi",
+          "description": "Semiconductor company with FPGA and microcontroller solutions. Committed to developer community and open ecosystems.",
+          "website": "https://www.microchip.com",
+          "ownershipStatus": "independent",
+          "wikidataEntity": "Q658560"
+        }
+      ]
+    }
+  }
+}
