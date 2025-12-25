@@ -1,0 +1,147 @@
+.comparison-view {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.comparison-view h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 12px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.comparison-card {
+  text-align: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.comparison-label {
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.comparison-value {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.baseline-value {
+  color: #666;
+}
+
+.current-value {
+  color: #007bff;
+}
+
+.comparison-period {
+  color: #999;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.comparison-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.indicator-arrow {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.indicator-arrow.positive {
+  color: #28a745;
+}
+
+.indicator-arrow.negative {
+  color: #dc3545;
+}
+
+.indicator-arrow.neutral {
+  color: #999;
+}
+
+.change-value {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.change-value.positive {
+  color: #28a745;
+  background: #f0f8f5;
+}
+
+.change-value.negative {
+  color: #dc3545;
+  background: #fff5f5;
+}
+
+.change-value.neutral {
+  color: #666;
+  background: #f0f0f0;
+}
+
+.trend-summary {
+  text-align: center;
+  padding: 16px;
+  background: #f0f8ff;
+  border-radius: 6px;
+  border: 1px solid #d0e8ff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.trend-up {
+  color: #28a745;
+}
+
+.trend-down {
+  color: #dc3545;
+}
+
+.trend-stable {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-indicator {
+    grid-column: 1 / -1;
+  }
+
+  .comparison-value {
+    font-size: 28px;
+  }
+}

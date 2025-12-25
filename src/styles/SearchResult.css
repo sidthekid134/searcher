@@ -1,0 +1,136 @@
+.search-result {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.search-result:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.2s ease;
+}
+
+.result-header:hover {
+  background: #f0f0f0;
+}
+
+.result-title-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.result-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.hierarchy-depth-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #2196f3;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.result-flags {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 15px;
+  flex-wrap: wrap;
+}
+
+.flag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.flag-disputed {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.flag-incomplete {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s ease;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-btn:hover {
+  color: #333;
+}
+
+.result-metadata {
+  padding: 0 20px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  background: #fafafa;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata-item .label {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-item .value {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.result-details {
+  padding: 20px;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+}
