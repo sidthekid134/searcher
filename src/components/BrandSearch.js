@@ -5,7 +5,7 @@ import brandsData from '../data/brands';
 import storageManager from '../utils/storageManager';
 import '../styles/BrandSearch.css';
 
-const BrandSearch = () => {
+const BrandSearch = ({ onBrandSelect }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [searchEngine] = useState(() => new SearchEngine(brandsData));
@@ -102,7 +102,11 @@ const BrandSearch = () => {
         <div className="results-section">
           <div className="results-list">
             {results.map((brand) => (
-              <SearchResult key={brand.id} brand={brand} />
+              <SearchResult
+                key={brand.id}
+                brand={brand}
+                onBrandSelect={onBrandSelect}
+              />
             ))}
           </div>
         </div>
