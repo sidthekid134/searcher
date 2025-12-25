@@ -240,6 +240,14 @@ body {
   font-weight: 600;
 }
 
+/* Verdict Section */
+.verdict-section {
+  padding: 30px;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
 /* Ownership tree */
 .ownership-tree {
   padding: 30px;

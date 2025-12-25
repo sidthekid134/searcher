@@ -55,7 +55,7 @@
       "acquisitionYear": 2014
     },
     "slack": {
-      "label": "Slack",
+      "label": "Slack Technologies Inc.",
       "ownedBy": "salesforce",
       "confidence": 0.95,
       "acquisitionYear": 2021
@@ -119,6 +119,42 @@
       "ownedBy": "intel",
       "confidence": 0.95,
       "acquisitionYear": 2017
+    },
+    "zendesk": {
+      "label": "Zendesk Inc.",
+      "ownedBy": "apollo",
+      "confidence": 0.85,
+      "acquisitionYear": 2022
+    },
+    "apollo": {
+      "label": "Apollo Global Management",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1990
+    },
+    "qualtrics": {
+      "label": "Qualtrics International Inc.",
+      "ownedBy": "blackstone",
+      "confidence": 0.85,
+      "acquisitionYear": 2023
+    },
+    "blackstone": {
+      "label": "Blackstone Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1985
+    },
+    "turbotax": {
+      "label": "TurboTax",
+      "ownedBy": "intuit",
+      "confidence": 0.95,
+      "acquisitionYear": 1997
+    },
+    "intuit": {
+      "label": "Intuit Inc.",
+      "ownedBy": null,
+      "confidence": 1.0,
+      "foundedYear": 1983
     }
   }
 }

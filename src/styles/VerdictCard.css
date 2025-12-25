@@ -1,0 +1,394 @@
+/* Verdict Card Styles */
+
+.verdict-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-left: 6px solid var(--status-color);
+}
+
+.verdict-card.pe-flash {
+  animation: pe-flash-animation 1.5s ease-out;
+}
+
+.verdict-card.independent-fade {
+  animation: independent-fade-animation 2s ease-in;
+}
+
+/* PE Flash Animation - Red alert effect */
+@keyframes pe-flash-animation {
+  0% {
+    background-color: rgba(244, 67, 54, 0.1);
+    box-shadow: 0 0 20px rgba(244, 67, 54, 0.4);
+  }
+  50% {
+    background-color: rgba(244, 67, 54, 0.05);
+    box-shadow: 0 0 15px rgba(244, 67, 54, 0.2);
+  }
+  100% {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Independent Fade Animation - Green calm effect */
+@keyframes independent-fade-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Section */
+.verdict-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.verdict-title h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.verdict-title {
+  flex: 1;
+}
+
+.confidence-text {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Body Section */
+.verdict-body {
+  padding: 24px;
+}
+
+.parent-info {
+  margin-bottom: 20px;
+}
+
+.parent-info label,
+.acquisition-info label,
+.reason-section label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.parent-name {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Acquisition Timeline */
+.acquisition-info {
+  background: #f0f7ff;
+  border: 1px solid #e3f2fd;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.timeline-display {
+  margin-top: 12px;
+}
+
+.acquisition-year {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.time-since {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.time-value {
+  color: #1976d2;
+  font-weight: 700;
+}
+
+.time-ago {
+  color: #666;
+  font-weight: 400;
+}
+
+.timeline-progress {
+  margin-top: 12px;
+  background: #e3f2fd;
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  border-radius: 4px;
+  width: 60%;
+  animation: progress-animation 2s ease-in-out infinite;
+}
+
+@keyframes progress-animation {
+  0%, 100% {
+    width: 60%;
+  }
+  50% {
+    width: 80%;
+  }
+}
+
+/* Reason Section */
+.reason-section {
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.reason-text {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* PE Warning Section */
+.pe-warning-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #fff3e0;
+  border: 1px solid #ffe0b2;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.pe-warning-section:hover {
+  background: #ffe0b2;
+}
+
+.warning-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.warning-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.warning-text p {
+  margin: 0;
+  color: #e65100;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.info-button {
+  background: #ff6f00;
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+  background: #e65100;
+}
+
+/* PE Tooltip */
+.pe-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: white;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-width: 350px;
+  animation: tooltip-fade 0.3s ease-in;
+}
+
+.pe-tooltip p {
+  margin: 6px 0;
+}
+
+.pe-tooltip p:first-child {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.pe-tooltip p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes tooltip-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Public Company Section */
+.public-company-section {
+  padding: 16px;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.public-company-section .badge {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.public-company-section .company-info {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Independent Company Section */
+.independent-company-section {
+  padding: 16px;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.independent-company-section .badge {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.independent-company-section .company-info {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Verdict Status Specific Styles */
+.verdict-red {
+  --status-color: #f44336;
+}
+
+.verdict-yellow {
+  --status-color: #ffc107;
+}
+
+.verdict-green {
+  --status-color: #4caf50;
+}
+
+.verdict-unknown {
+  --status-color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .verdict-header {
+    padding: 16px;
+  }
+
+  .verdict-body {
+    padding: 16px;
+  }
+
+  .verdict-title h3 {
+    font-size: 1.1rem;
+  }
+
+  .parent-name {
+    font-size: 1rem;
+  }
+
+  .pe-tooltip {
+    max-width: calc(100vw - 32px);
+    left: 16px;
+    right: 16px;
+  }
+
+  .pe-warning-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .warning-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
