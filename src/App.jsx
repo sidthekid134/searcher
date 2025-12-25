@@ -93,6 +93,7 @@ export default function App() {
                 <VerdictCard
                   ultimateParent={result.chain[result.chain.length - 1]}
                   acquisitionYear={result.chain[result.chain.length - 1].acquisitionYear}
+                  brandData={result.chain[0]}
                 />
               </div>
             )}

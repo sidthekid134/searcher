@@ -6,9 +6,10 @@ import {
   getStatusColor,
   getStatusLabel
 } from '../services/ownershipClassificationService.js';
+import HollowOutIndex from './HollowOutIndex.jsx';
 import '../styles/VerdictCard.css';
 
-export default function VerdictCard({ ultimateParent, acquisitionYear }) {
+export default function VerdictCard({ ultimateParent, acquisitionYear, brandData }) {
   const [classification, setClassification] = useState(null);
   const [timeSinceAcquisition, setTimeSinceAcquisition] = useState(null);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -125,6 +126,12 @@ export default function VerdictCard({ ultimateParent, acquisitionYear }) {
           </p>
         </div>
       )}
+
+      {/* Hollow-Out Index for PE-owned brands */}
+      <HollowOutIndex
+        brand={brandData}
+        isPEOwned={classification.isPEOwned}
+      />
     </div>
   );
 }
