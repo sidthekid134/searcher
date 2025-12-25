@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HierarchyViewer from './HierarchyViewer';
 import '../styles/SearchResult.css';
 
-const SearchResult = ({ brand }) => {
+const SearchResult = ({ brand, onBrandSelect }) => {
   const [expanded, setExpanded] = useState(false);
 
   const formatDate = (dateString) => {
@@ -62,6 +62,17 @@ const SearchResult = ({ brand }) => {
           <span className="label">Last Updated:</span>
           <span className="value">{formatDate(brand.lastUpdated)}</span>
         </div>
+        {onBrandSelect && (
+          <div className="metadata-item">
+            <button
+              className="view-trends-btn"
+              onClick={() => onBrandSelect(brand.id)}
+              title="View sentiment trends for this brand"
+            >
+              📊 View Sentiment Trends
+            </button>
+          </div>
+        )}
       </div>
 
       {expanded && (
